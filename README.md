@@ -15,7 +15,7 @@ We intend to provide two types of services. The basic service and other general 
   ## Opening the file:
   Download the zip and extract them to your desktop. Open Edu aide folder in that you will find an INDEX file. Double click on it to open.
   ## Development of website:
-    We used "Iterative prototyping model" to develop our website. We collected feedback from our college friends and used them to develop our project.
+    We used **Iterative prototyping model** to develop our website. We collected feedback from our college friends and used them to develop our project.
   ## Languages used:
     * HTML
     * CSS
