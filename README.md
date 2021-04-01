@@ -22,8 +22,8 @@ We intend to provide two types of services. The basic service and other general 
     * CSS
     * JAVASCRIPT
    # GOOGLE PRODUCTS USED:
-    * FIREBASE
-    * GOOGLE CLOUD - GOOGLE DIALOGFLOW
+    * FIREBASE - Registration form(For Both getting and providing Sponsorship)
+    * GOOGLE CLOUD (GOOGLE DIALOGFLOW)- For developing Chatbot EDNA
 # Future development:
    For now, we have integrated only the registration form with GOOGLE FIREBASE, the next stage of our project is we will integrate our whole project with firebase and use firebase to display information on the website. We are planning to push the bounds of our chatbot EDNA and help the user in every possible way. We also plan to expand our basic services to the Anti-suicide community, Anti-drug community, and community for job support that is directly coordinated with companies that are offering the job. We will add some more services in our other services block too.
    
