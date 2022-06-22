@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Register</title>
+  <link rel="stylesheet" type="text/css" href="registercss.css">
+</head>
+
+<body>
+<div class="mainpage">
+	<img src="avatar.png" class="avatar">
+	<h1>Register</h1>
+		<p>Name</p>
+		<input type="text" id="name" name="name" placeholder="Enter Username" class="input" required>
+		<p>Email</p>
+		<input type="email"  id="email" name="email" placeholder="Enter valid Email" class="input" required>
+		
+		<br>
+		<p>Enter Gender</p><br>
+		<select id="gender" name="gender" required="required" style="color: white; background-color: rgba(0,0,0,.5);">
+			<option value="gender">custom</option>
+			<option value="male">Male</option>
+			<option value="Female">Female</option><br>
+  </select>
+
+<br><br>
+      <p>Define your Purpose:</p><br>
+    <select id="purpose" name="gender" required="required" style="color: white; background-color: rgba(0,0,0,.5);">
+      <option value="I like to provide Sponsorship">I like to provide Sponsorship</option>
+      <option value="I like to get sponsorship">I like to get sponsorship</option>
+     </select>
+     <br><br>
+     <p>Tell us Why you want to provide (or) Get sponsorship?</p><br>
+   <textarea id="definepurp"  placeholder="Enter your reason here..." class="input" name="define" rows="4" cols="50" required="">
+  </textarea>
+				
+	
+		<br>
+		<br>
+		<p>Contact Number</p>
+		<input type="tel" name="phonenumber" id="telephone1" placeholder="Enter Number #1" class="input" required>
+
+		<input type="tel" name="phonenumber" id="telephone2" placeholder="Enter Number #2" class="input">	
+
+		
+
+		<h3>Enter Your address</h3>
+		<p>Door number:
+		<input type="tel" name="Door" id="doorno" placeholder="Enter Number" class="input" required>
+		</p>
+		<p>City:</p>
+		<input type="text" name="City" id="cityname" placeholder="Enter City" class="input" required>
+
+		<p>Address:</p>
+		<input type="text" name="Address" id="address" placeholder="Enter Address" class="input" required>
+
+		<button id="submit" onclick="storedata()">Upload</button>
+		
+	
+		
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCvlvkJASg6iBWQzqaRHTjwx7Hpg-jVFIc",
+    authDomain: "edu-aide.firebaseapp.com",
+    projectId: "edu-aide",
+    storageBucket: "edu-aide.appspot.com",
+    messagingSenderId: "490204036176",
+    appId: "1:490204036176:web:1ae51e9ef927b84ccb2555",
+    measurementId: "G-7RRK9B2FD2"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+</script>
+
+<script>
+  
+  var db = firebase.firestore();
+function storedata()
+{
+
+  var nametext = document.getElementById("name").value;
+  var emailtext = document.getElementById("email").value;
+  var gendertext = document.getElementById("gender").value;
+  var telephoneno1 = document.getElementById("telephone1").value;
+  var telephoneno2 = document.getElementById("telephone2").value;
+  var doornumber = document.getElementById("doorno").value;
+  var citytext = document.getElementById("cityname").value;
+  var addresstext = document.getElementById("address").value;
+  var purpose = document.getElementById("purpose").value;
+  var Define = document.getElementById("definepurp").value;
+
+  // Add a new document in collection "cities"
+  var random = Math.floor(Math.random() * 10);
+
+db.collection("Registration").doc().set({
+    name: nametext,
+    email: emailtext,
+    gender: gendertext,
+    contactNo1: telephoneno1,
+    contactNo2: telephoneno2,
+    doorNo: doornumber,
+    city: citytext,
+    address: addresstext,
+    Purpose: purpose,
+    Reason: Define
+   
+})
+.then(() => {
+    window.alert("Data successfully Saved");
+    location.reload();
+})
+.catch((error) => {
+    window.alert("Error in data saving");
+});
+}
+
+  </script>
+
+
+
+
+  
+</body>
+
+</html>
